@@ -18,12 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quiz Demo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zop-Fy-UJP">
-                                <rect key="frame" x="118" y="78" width="85" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HsU-VQ-Itr">
                                 <rect key="frame" x="145" y="269" width="30" height="30"/>
                                 <state key="normal" title="Play"/>
@@ -31,17 +25,22 @@
                                     <segue destination="0co-Gw-8pF" kind="show" id="2OK-31-I97"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quiz Demo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zop-Fy-UJP">
+                                <rect key="frame" x="0.0" y="107" width="320" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HsU-VQ-Itr" secondAttribute="trailing" constant="145" id="2Cv-2G-d01"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="HsU-VQ-Itr" secondAttribute="bottom" constant="269" id="6ck-oY-1lj"/>
+                            <constraint firstItem="zop-Fy-UJP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="43" id="Jfu-Kk-DY2"/>
                             <constraint firstItem="HsU-VQ-Itr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="145" id="OsF-HZ-LHR"/>
-                            <constraint firstItem="zop-Fy-UJP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="118" id="Qpq-O4-sar"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zop-Fy-UJP" secondAttribute="bottom" constant="469" id="Vxi-TL-7GT"/>
-                            <constraint firstItem="HsU-VQ-Itr" firstAttribute="top" secondItem="zop-Fy-UJP" secondAttribute="bottom" constant="170" id="cJM-sE-qKx"/>
-                            <constraint firstItem="zop-Fy-UJP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="14" id="gFO-Um-qwk"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zop-Fy-UJP" secondAttribute="trailing" constant="117" id="pWN-bn-GkM"/>
+                            <constraint firstItem="HsU-VQ-Itr" firstAttribute="top" secondItem="zop-Fy-UJP" secondAttribute="bottom" constant="141" id="Q4B-N1-we7"/>
+                            <constraint firstItem="zop-Fy-UJP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hCc-25-51R"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zop-Fy-UJP" secondAttribute="trailing" id="xAv-T5-NzJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -74,21 +73,33 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="b15-vs-YGc">
                                 <rect key="frame" x="0.0" y="320" width="320" height="248"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gt6-up-HVH">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="gt6-up-HVH">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="62"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="verifyAnswer:" destination="0co-Gw-8pF" eventType="touchUpInside" id="kpI-f5-wzs"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IxY-Ga-diS">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="IxY-Ga-diS">
                                         <rect key="frame" x="0.0" y="62" width="320" height="62"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="verifyAnswer:" destination="0co-Gw-8pF" eventType="touchUpInside" id="ptS-hN-cGB"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dow-bP-ngm">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="dow-bP-ngm">
                                         <rect key="frame" x="0.0" y="124" width="320" height="62"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="verifyAnswer:" destination="0co-Gw-8pF" eventType="touchUpInside" id="dBT-ip-MfB"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M5r-uu-vUN">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="M5r-uu-vUN">
                                         <rect key="frame" x="0.0" y="186" width="320" height="62"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="verifyAnswer:" destination="0co-Gw-8pF" eventType="touchUpInside" id="Bwb-nz-TD3"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -122,6 +133,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tgg-yd-1QI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1462.5" y="133.09859154929578"/>
+        </scene>
+        <!--AV Player View Controller-->
+        <scene sceneID="foe-eY-zGh">
+            <objects>
+                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="M2i-em-KF6" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gas-Yr-eix" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2381" y="133"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="H4v-1A-IHi">
