@@ -7,3 +7,10 @@
 //
 
 import Foundation
+struct Question {
+    
+    var question: String
+    var correct: String
+    var incorrect: [String]
+    var type: String
+}

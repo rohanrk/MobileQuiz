@@ -7,3 +7,11 @@
 //
 
 import Foundation
+import Alamofire
+import SwiftyJSON
+struct QuestionDownloader {
+    
+    static func download() {
+        
+    }
+}

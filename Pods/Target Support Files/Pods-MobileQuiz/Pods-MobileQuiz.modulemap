@@ -1,0 +1,6 @@
+framework module Pods_MobileQuiz {
+  umbrella header "Pods-MobileQuiz-umbrella.h"
+
+  export *
+  module * { export * }
+}
